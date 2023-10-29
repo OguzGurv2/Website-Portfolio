@@ -4,8 +4,53 @@
 
 <link rel="stylesheet" href="css/style.css">
 <script src="https://kit.fontawesome.com/13e3511e22.js" crossorigin="anonymous"></script>
+<script type="module" defer src="static/index.js"></script>
 
 <body>
+
+    <a href="#" class="home-button"><i class="fa-solid fa-up-long"></i></a>
+
+    <section id="r-screen" class="hidden">
+
+        <a id="close-button" href="#"><i class="fa-solid fa-x"></i><a>
+
+        <hr>
+
+        <div class="screen-container">
+
+            <div class="row-container">
+
+                <h1 class="screen-header">#Leave a Recommendation</h1>
+        
+                <label for="name"></label>
+                <input type="text" id="name" placeholder="Name (Optional)">
+
+                <hr class="half">
+                
+                <textarea id="recommendation" rows="4" cols="50" placeholder="Message"></textarea>
+
+                <hr class="half">
+
+                <button id="submit-btn" href="#">Submit</button>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="thx-msg" class="hidden">
+
+        <div class="msg-container">
+            
+            <a id="msg-close"><i class="fa-solid fa-x"></i><a>
+    
+            <p class="message">
+                Your recommendation has been submitted.
+                <br>
+                Thank you!
+            </p>
+        </div>
+    </div>
+
     <section class="top-bar">
 
         <div class="contact">
@@ -50,6 +95,7 @@
                     #Hi, I'm Oğuz Gür
                 </h1>
                 <br>
+                <br>
                 <p class="about-paragraph">
                     A second-year Software Engineering student,
                     <br>
@@ -82,7 +128,7 @@
 
         <hr class="half">
 
-        <div class="skills-container">
+        <div class="container">
 
             <div class="skills-child">
 
@@ -230,50 +276,41 @@
 
         <hr class="half">
 
-        <div class="r-container">
+        <div id="r-container" class="container">
 
             <div class="r-child">
-
-                <h2 class="r-name">Javascript</h2>
-                <br>
-                <img class="r-img" src="pngs/js.png"/>
-                <br>
-                <p class="r-paragraph">1 Year Experience</p>
+                
+                <p class="r-paragraph">
+                    One of the most impressive quality of Oğuz is his eagerness to learn and his commitment to self-improvement. His exceptional performance and expertise in JavaScript underscore his ability to swiftly comprehend and implement new concepts. Every new project or task has been an opportunity for Oğuz, and he has seized these opportunities exceptionally well.
+                </p>
             </div>
 
             <div class="r-child">
 
-                <h2 class="r-name">HTML5</h2>
-                <br>
-                <img class="r-img" src="pngs/html.png"/>
-                <p class="r-paragraph">1 Year Experience</p>
+                <p class="r-paragraph">
+                    His communication skills have been instrumental in enhancing teamwork and collaboration within the team. Always maintaining open and clear communication, Oğuz ensures that projects progress smoothly and without issues. Moreover, his proficiency in the English language has been a significant advantage in international projects and communications.
+                </p>
             </div>
 
             <div class="r-child">
 
-                <h2 class="r-name">CSS3</h2>
-                <br>
-                <img class="r-img" src="pngs/css.png"/>
-                <p class="r-paragraph">1 Year Experience</p>
+                <p class="r-paragraph">
+                    Oğuz consistently excels in completing tasks on time and with high quality. His ability to fully comprehend job requirements has enabled him to produce the best solutions for every project. His effective management of the entire process guarantees that project timelines are met.
+                </p>
             </div>
 
             <div class="r-child">
 
-                <h2 class="r-name">PostgreSQL</h2>
-                <br>
-                <img class="r-img" src="pngs/postgresql.png"/>
-                <p class="r-paragraph">1 Year Experience</p>
+                <p class="r-paragraph">
+                    Oğuz's versatility shines through his capacity to adapt to diverse tasks and situations. His willingness and readiness to take on any project have always been impressive. His ability to quickly and effectively adapt to changing job requirements adds to his value.
+                </p>
             </div>
 
-            <div class="r-child">
+            <div class="r-child last-child">
 
-                <h2 class="r-name">WordPress</h2> 
-                <br>
-                <img class="r-img" src="pngs/wordpress.png"/>
-                <p class="r-paragraph">1 Year Experience</p>
+                <div class="add-recommendation"><i class="fa-solid fa-circle-plus"></i></div>
             </div>
         </div>
         <hr>
-        <hr class="section-bar"/>
     </section>
 </body>
