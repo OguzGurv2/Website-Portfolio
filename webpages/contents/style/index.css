@@ -1,0 +1,222 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --background: #1E1E1E;
+    --primary: #E0E0E0;
+    --secondary: #A0A0A0;
+    --link: #00A67E;
+    --link: #3399FF;
+    --red: #D32F2F;
+}
+
+section {
+    background-color: var(--background);
+    width: 100%;
+    height: 100vh;
+}
+
+.img-wrapper {
+    position: fixed;
+    top: 2.5%;
+    left: 1.875%;
+    width: 53px;
+    height: 53px;
+    cursor: pointer;
+    z-index: 9999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.img-border {
+    position: fixed;
+    top: 2.5%;
+    left: 1.875%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+
+.top-bar {
+    margin-top: 0.675%;
+    margin-left: 3.75%;
+    mix-blend-mode: difference;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    z-index: 9998;
+}
+
+.top-bar>ul {
+    margin-left: 7.5%;
+    display: inline-flex;
+    justify-content: space-between;
+    list-style-type: none;
+    gap: 30px;
+}
+
+
+.top-bar>ul>li>a {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 200ms ease-in-out;
+}
+
+.top-bar>ul>li>a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: var(--link);
+    left: 0;
+    transition: width 200ms ease-in-out;
+}
+
+.top-bar>ul>li>a:hover {
+    color: var(--link);
+}
+
+.top-bar>ul>li>a:hover::after {
+    width: 100%;
+}
+
+.social-bar {
+    display: flex;
+    position: absolute;
+    left: 1.5%;
+    gap: 5vh;
+    width: 5vw;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-bar>ul {
+    height: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+
+.social-bar>ul>li>a>i {
+    font-size: 30px;
+    color: var(--primary);
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+}
+
+.social-bar>ul>li>a>i:hover {
+    color: var(--link);
+}
+
+.social-bar>ul>li>div {
+    margin-left: 35%;
+    width: 2px;
+    height: 60px;
+    background-color: var(--primary);
+}
+
+.hero-wrapper {
+    width: 80%;
+    height: 80%;
+    display: flex;
+}
+
+.hero-content {
+    width: 50%;
+    padding: 20% 0% 0% 15%;
+}
+
+.hero-content>.spans>span {
+    font-size: 75px;
+    font-weight: 700;
+    color: var(--primary);
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+    margin-left: -6px;
+}
+
+.hero-content>.spans>span:hover {
+    color: var(--link);
+}
+
+.hero-content>p {
+    margin-top: 2.5%;
+    font-size: 18px;
+    font-weight: 100;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.hero-img {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: var(--primary);
+    clip-path: polygon(0% 55%, 45% 0%, 100% 0%, 100% 100%, 45% 100%);
+}
+
+.img-clip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: var(--background);
+    clip-path: polygon(7.5% 55%, 52.5% 0%, 55% 0%, 10% 55%, 55% 100%, 52.5% 100%);
+}
+
+.hero-img > img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    position: relative; 
+    z-index: 1; 
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: linear-gradient(180deg, transparent 0%, var(--background) 100%);
+    z-index: 3; 
+    pointer-events: none; 
+}
+
+.skills-section {
+    background-color: var(--primary);
+}
