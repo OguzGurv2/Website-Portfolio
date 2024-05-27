@@ -9,9 +9,13 @@
     --background: #1E1E1E;
     --primary: #E0E0E0;
     --secondary: #A0A0A0;
-    --link: #00A67E;
+    --green: #00A67E;
     --link: #3399FF;
     --red: #D32F2F;
+}
+
+body{
+    scroll-behavior: smooth;
 }
 
 section {
@@ -206,7 +210,7 @@ section {
     z-index: 1; 
 }
 
-.dark-overlay {
+.hero-img>.dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -217,6 +221,163 @@ section {
     pointer-events: none; 
 }
 
-.skills-section {
+#skills, #portfolio {
+    position: relative;
     background-color: var(--primary);
 }
+
+.skills-header {
+    position: absolute;
+    top: 12.5%;
+    left: 10%;
+    font-size: 50px;
+    z-index: 1;
+}
+
+.skills-content {
+    width: 80%;
+    height: 60%;
+    padding: 30vh 10% 10vh 10%;
+    z-index: 1;
+    position: relative;
+}
+
+.skills-content>ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style:none;
+    width: 100%;
+    height: 100%;
+    align-items: top;
+}
+
+.skills-content>ul>li {
+    display: flex;
+    width: 70%;
+    height: fit-content;
+    justify-self: center;
+    text-align: center;
+    align-items: center;
+    padding-top: 10%;
+    gap: 5%;
+}
+
+.skills-content>ul>li>.icon-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 2px;
+    background-color: var(--background);
+    color: var(--primary);
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+    transition: box-shadow 300ms ease-in;
+}
+
+.skills-content>ul>li:nth-child(5)>.icon-container {
+    font-size: 70px;
+}
+
+.skills-content>ul>li:nth-child(6)>.icon-container {
+    font-size: 55px;
+}
+
+.skills-content>ul>li>.icon-container:hover {
+    background-color: var(--green);
+    box-shadow: 1px 1px 10px 1px var(--green);
+}
+
+.skills-content>ul>li>p {
+    font-weight: 600;
+    height: 100%;
+    text-align: left;
+}
+
+.circle-background-1 {
+    position: absolute;
+    top: 7.5%;
+    right: 7.5%;
+    width: 100px;
+    height: 500px;
+    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    z-index: 0;
+}
+
+.circle-background-2 {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    width: 125px;
+    height: 75px;
+    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.circle-background-3 {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+#links {
+    height: 40vh;
+    width: 100%;
+    background-color: var(--primary);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+}
+
+#links>h1 {
+    padding-top: 25px;
+    color: var(--background);
+    font-size: 50px;
+}
+
+.link-list {
+    padding-top: 25px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 50px;
+}
+
+.link-list>li>p {
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.link-list>li>div {
+    background-color: var(--background);
+    width: 125px;
+    height: 125px;
+    clip-path: polygon(0% 50%, 50% 100%, 100% 50%, 50% 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-list>li>div>a>i {
+    color: var(--primary);
+    transition: color 200ms ease-in-out;
+}
+
+.link-list>li>div>a>i:hover {
+    color: var(--green);
+}
+
+
