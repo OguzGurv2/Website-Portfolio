@@ -24,6 +24,15 @@ section {
     height: 100vh;
 }
 
+section>h1 {
+    position: absolute;
+    top: 12.5%;
+    left: 10%;
+    font-size: 50px;
+    z-index: 1;
+    color: var(--background);
+}
+
 .img-wrapper {
     position: fixed;
     top: 2.5%;
@@ -226,14 +235,6 @@ section {
     background-color: var(--primary);
 }
 
-.skills-header {
-    position: absolute;
-    top: 12.5%;
-    left: 10%;
-    font-size: 50px;
-    z-index: 1;
-}
-
 .skills-content {
     width: 80%;
     height: 60%;
@@ -380,4 +381,69 @@ section {
     color: var(--green);
 }
 
+#portfolio>div {
+    display: grid;
+    width: 80%;
+    height: 70%;
+    padding: 22.5vh 10% 7.5vh 10%;
+    grid-template-rows: 1fr 0.75fr 1.25fr;
+}
 
+.row1 {
+    display: inline-flex;
+    gap: 2.5%;
+    width: 100%;
+    height: 100%
+}
+
+.row1-wrapper {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.row1-wrapper>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    gap: 2.5%;
+    background-color: var(--green);
+    color: var(--primary);
+    border-radius: 25px;
+    padding: 5%;
+    text-decoration: none;
+    transition: box-shadow 600ms ease-in-out;
+    transition: scale 600ms ease-in-out;
+}
+
+.row1-wrapper>a:hover {
+    scale: 1.05;
+    box-shadow: 1px 1px 10px 1px var(--green);
+}
+
+.row1-wrapper>a>i {
+    font-size: 24px;
+}
+
+.row1-wrapper>a>p {
+    padding-top: 2%;
+}
+
+
+#contributions-heatmap {
+    width: 75%;
+    height: fit-content;
+}
+
+#portfolio>h2 {
+    color: var(--background);
+    font-size: 45px;
+    opacity: 0.2;
+    position: absolute;
+    top: 16%;
+    right: 21%;
+    z-index: 0;
+}

@@ -2,9 +2,16 @@
 <meta charset="utf-8">
 <title>Home</title>
 
-<link rel="stylesheet" href="./contents/style/index.css">
-<script src="https://kit.fontawesome.com/13e3511e22.js" crossorigin="anonymous"></script>
-<script type="module" defer src="./contents/static/index.js"></script>
+<head>
+    <link rel="stylesheet" href="./contents/style/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/plugins/Tooltip.min.js"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/plugins/CalendarLabel.min.js"></script>
+    <script src="https://kit.fontawesome.com/13e3511e22.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
     <div class="img-border"></div>
@@ -23,7 +30,7 @@
                 <a href="#links">LINKS</a>
             </li>
             <li>
-
+                
                 <a href="#portfolio">PORTFOLIO</a>
             </li>
             <li>
@@ -151,6 +158,22 @@
         <div class="circle-background-3"></div>
     </div>
     <section id="portfolio">
-
+        <h1>Portfolio</h1>
+        <h2>Contributions</h2>
+        <div class="portfolio-content">
+            <div class="row1">
+                <div class="row1-wrapper">
+                    <p>This is my portfolio that I gathered over the years.</p>
+                    <a href="https://github.com/OguzGurv2">
+                        <i class="fa-brands fa-github"></i>
+                        <p>GO TO GITHUB</p>
+                    </a>
+                </div>
+                <div id="contributions-heatmap"></div>
+            </div>
+            <div class="row2"></div>
+            <div class="row3"></div>
+        </div>
     </section>
+    <script src="./contents/static/index.js"></script>
 </body>
