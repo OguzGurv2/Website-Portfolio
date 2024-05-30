@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const username = 'OguzGurv2';
+    const token = '';
     
     const query = `
     {

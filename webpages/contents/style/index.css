@@ -340,6 +340,7 @@ section>h1 {
     align-items: center;
     text-align: center;
     display: block;
+    position: relative;
 }
 
 #links>h1 {
@@ -370,6 +371,8 @@ section>h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+    position: relative;
 }
 
 .link-list>li>div>a>i {
@@ -379,6 +382,28 @@ section>h1 {
 
 .link-list>li>div>a>i:hover {
     color: var(--green);
+}
+
+.circle-background-4 {
+    position: absolute;
+    top: 0%;
+    right: 2.5%;
+    width: 150px;
+    height: 50px;
+    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    z-index: 0;
+}
+
+.circle-background-5 {
+    position: absolute;
+    bottom: 0%;
+    left: 2.5%;
+    width: 150px;
+    height: 50px;
+    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    z-index: 0;
 }
 
 #portfolio>div {
