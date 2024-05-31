@@ -1,178 +1,205 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <title>Home</title>
 
 <head>
-    <link rel="stylesheet" href="./contents/style/index.css">
-    <link rel="stylesheet" href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/cal-heatmap/dist/plugins/Tooltip.min.js"></script>
-    <script src="https://unpkg.com/cal-heatmap/dist/plugins/CalendarLabel.min.js"></script>
-    <script src="https://kit.fontawesome.com/13e3511e22.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./contents/style/index.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css"
+  />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/cal-heatmap/dist/plugins/Tooltip.min.js"></script>
+  <script src="https://unpkg.com/cal-heatmap/dist/plugins/CalendarLabel.min.js"></script>
+  <script
+    src="https://kit.fontawesome.com/13e3511e22.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
 
 <body>
-    <div class="img-border"></div>
-    <div class="img-wrapper">
-        <img alt="profile picture" src="./contents/imgs/topbar-photo.jpeg" class="profile-img">
-    </div>    
-    <div class="top-bar">
-        <ul>
-            <li>
-                <a href="#">HOME</a>
-            </li>
-            <li>
-                <a href="#skills">WHAT I CAN</a>
-            </li>
-            <li>
-                <a href="#links">LINKS</a>
-            </li>
-            <li>
-                
-                <a href="#portfolio">PORTFOLIO</a>
-            </li>
-            <li>
-                <a href="#contact">CONTACT ME</a>
-            </li>
-        </ul>
-    </div>
-    <div class="social-bar">
-        <ul>
-            <li>
-                <a href="https://github.com/OguzGurv2"><i class="fa-brands fa-github"></i></a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/oguz-gur/"><i class="fa-brands fa-linkedin"></i></a>
-            </li>
-            <li>
-                <a href="mailto:oguz.gur.cs@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/ouzdotexe/"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-                <div></div>
-            </li>
-        </ul>
-    </div>
-    <section class="hero-section">
-        <div class="hero-wrapper">
-            <div class="hero-content">
-                <div class="spans">
-                    <span>O</span>
-                    <span>G</span>
-                    <span>U</span>
-                    <span>Z</span>
-                    <br>
-                    <span>G</span>
-                    <span>U</span>
-                    <span>R</span>
-                </div>
-                <p>SECOND YEAR SOFTWARE ENGINEERING STUDENT</p>
-            </div>
-            <div class="hero-img">
-                <div class="img-clip"></div>
-                <img src="./contents/imgs/AdobeStock_253417100.jpeg">
-                <div class="dark-overlay"></div>
-            </div>
+  <div class="img-border"></div>
+  <div class="img-wrapper">
+    <img
+      alt="profile picture"
+      src="./contents/imgs/topbar-photo.jpeg"
+      class="profile-img"
+    />
+  </div>
+  <div class="top-bar">
+    <ul>
+      <li>
+        <a href="#">HOME</a>
+      </li>
+      <li>
+        <a href="#skills">WHAT I CAN</a>
+      </li>
+      <li>
+        <a href="#links">LINKS</a>
+      </li>
+      <li>
+        <a href="#portfolio">PORTFOLIO</a>
+      </li>
+      <li>
+        <a href="#contact">CONTACT ME</a>
+      </li>
+    </ul>
+  </div>
+  <div class="social-bar">
+    <ul>
+      <li>
+        <a href="https://github.com/OguzGurv2"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/oguz-gur/"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </li>
+      <li>
+        <a href="mailto:oguz.gur.cs@gmail.com"
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/ouzdotexe/"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </li>
+      <li>
+        <div></div>
+      </li>
+    </ul>
+  </div>
+  <section class="hero-section">
+    <div class="hero-wrapper">
+      <div class="hero-content">
+        <div class="spans">
+          <span>O</span>
+          <span>G</span>
+          <span>U</span>
+          <span>Z</span>
+          <br />
+          <span>G</span>
+          <span>U</span>
+          <span>R</span>
         </div>
-    </section>
-    <section id="skills">
-        <h1 class="skills-header">My Key Competences</h1>
-        <div class="skills-content">
-            <ul>
-                <li>
-                    <div class="icon-container">
-                        <i class="fa-brands fa-js"></i>
-                    </div>
-                    <p>JavaScript</p>
-                </li>
-                <li>
-                    <div class="icon-container">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <p>SQL<br>Languages</p>
-                </li>
-                <li>
-                    <div class="icon-container">
-                        <i class="fa-brands fa-html5"></i>
-                    </div>
-                    <p>HTML5</p>
-                </li>
-                <li>
-                    <div class="icon-container">
-                        <i class="fa-brands fa-css3-alt"></i>
-                    </div> 
-                    <p>CSS3</p>
-                </li>
-                <li>
-                    <div class="icon-container">
-                        <i class="fa-brands fa-php"></i>
-                    </div> 
-                    <p>PHP</p>
-                </li>
-                <li>
-                    <div class="icon-container">
-                        <i class="fa-solid fa-code"></i>
-                    </div> 
-                    <p>Haskell</p>
-                </li>
-            </ul>
-        </div>
-        <div class="circle-background-1"></div>
-        <div class="circle-background-2"></div>
-        <div class="circle-background-3"></div>
-    </section>
-    <div id="links">
-        <h1>Links</h1>
-        <ul class="link-list">
-            <li>
-                <div>
-                    <a href="https://github.com/OguzGurv2"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <p>Github</p>
-            </li>
-            <li>
-                <div>
-                    <a href="https://www.linkedin.com/in/oguz-gur/"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <p>Linkedin</p>
-            </li>
-            <li>
-                <div>
-                    <a href="mailto:oguz.gur.cs@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                </div>
-                <p>Gmail</p>
-            </li>
-            <li>
-                <div>
-                    <a href="https://www.instagram.com/ouzdotexe/"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <p>Instagram</p>
-            </li>
-        </ul>
-        <div class="circle-background-4"></div>
-        <div class="circle-background-5"></div>
+        <p>SECOND YEAR SOFTWARE ENGINEERING STUDENT</p>
+      </div>
+      <div class="hero-img">
+        <div class="img-clip"></div>
+        <img src="./contents/imgs/AdobeStock_253417100.jpeg" />
+        <div class="dark-overlay"></div>
+      </div>
     </div>
-    <section id="portfolio">
-        <h1>Portfolio</h1>
-        <h2>Contributions</h2>
-        <div class="portfolio-content">
-            <div class="row1">
-                <div class="row1-wrapper">
-                    <p>This is my portfolio that I gathered over the years.</p>
-                    <a href="https://github.com/OguzGurv2">
-                        <i class="fa-brands fa-github"></i>
-                        <p>GO TO GITHUB</p>
-                    </a>
-                </div>
-                <div id="contributions-heatmap"></div>
-            </div>
-            <div class="row2"></div>
-            <div class="row3"></div>
+  </section>
+  <section id="skills">
+    <h1 class="skills-header">My Key Competences</h1>
+    <div class="skills-content">
+      <ul>
+        <li>
+          <div class="icon-container">
+            <i class="fa-brands fa-js"></i>
+          </div>
+          <p>JavaScript</p>
+        </li>
+        <li>
+          <div class="icon-container">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <p>SQL<br />Languages</p>
+        </li>
+        <li>
+          <div class="icon-container">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <p>HTML5</p>
+        </li>
+        <li>
+          <div class="icon-container">
+            <i class="fa-brands fa-css3-alt"></i>
+          </div>
+          <p>CSS3</p>
+        </li>
+        <li>
+          <div class="icon-container">
+            <i class="fa-brands fa-php"></i>
+          </div>
+          <p>PHP</p>
+        </li>
+        <li>
+          <div class="icon-container">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <p>Haskell</p>
+        </li>
+      </ul>
+    </div>
+    <div class="circle-background-1"></div>
+    <div class="circle-background-2"></div>
+    <div class="circle-background-3"></div>
+  </section>
+  <div id="links">
+    <h1>Links</h1>
+    <ul class="link-list">
+      <li>
+        <div>
+          <a href="https://github.com/OguzGurv2"
+            ><i class="fa-brands fa-github"></i
+          ></a>
         </div>
-    </section>
-    <script src="./contents/static/index.js"></script>
+        <p>Github</p>
+      </li>
+      <li>
+        <div>
+          <a href="https://www.linkedin.com/in/oguz-gur/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+        <p>Linkedin</p>
+      </li>
+      <li>
+        <div>
+          <a href="mailto:oguz.gur.cs@gmail.com"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+        <p>Gmail</p>
+      </li>
+      <li>
+        <div>
+          <a href="https://www.instagram.com/ouzdotexe/"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+        <p>Instagram</p>
+      </li>
+    </ul>
+    <div class="circle-background-4"></div>
+    <div class="circle-background-5"></div>
+  </div>
+  <section id="portfolio">
+    <h1>Portfolio</h1>
+    <h2>Contributions</h2>
+    <div class="portfolio-content">
+      <div class="row1">
+        <div class="row1-wrapper">
+          <p>This is my portfolio that I gathered over the years.</p>
+          <a href="https://github.com/OguzGurv2">
+            <i class="fa-brands fa-github"></i>
+            <p>GO TO GITHUB</p>
+          </a>
+        </div>
+        <div id="contributions-heatmap"></div>
+      </div>
+      <div class="row2"></div>
+      <div class="row3"></div>
+    </div>
+  </section>
+  <div id="repo-container"></div>
+
+  <script src="./contents/static/index.js"></script>
 </body>

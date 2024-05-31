@@ -1,474 +1,568 @@
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: sans-serif;
 }
 
 :root {
-    --background: #1E1E1E;
-    --primary: #E0E0E0;
-    --secondary: #A0A0A0;
-    --green: #00A67E;
-    --link: #3399FF;
-    --red: #D32F2F;
+  --background: #1e1e1e;
+  --primary: #e0e0e0;
+  --secondary: #a0a0a0;
+  --green: #00a67e;
+  --link: #3399ff;
+  --red: #d32f2f;
 }
 
-body{
-    scroll-behavior: smooth;
+body {
+  scroll-behavior: smooth;
 }
 
 section {
-    background-color: var(--background);
-    width: 100%;
-    height: 100vh;
+  background-color: var(--background);
+  width: 100%;
+  height: 100vh;
 }
 
-section>h1 {
-    position: absolute;
-    top: 12.5%;
-    left: 10%;
-    font-size: 50px;
-    z-index: 1;
-    color: var(--background);
+section > h1 {
+  position: absolute;
+  top: 12.5%;
+  left: 10%;
+  font-size: 50px;
+  z-index: 1;
+  color: var(--background);
 }
 
 .img-wrapper {
-    position: fixed;
-    top: 2.5%;
-    left: 1.875%;
-    width: 53px;
-    height: 53px;
-    cursor: pointer;
-    z-index: 9999;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
+  position: fixed;
+  top: 2.5%;
+  left: 1.875%;
+  width: 53px;
+  height: 53px;
+  cursor: pointer;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .img-border {
-    position: fixed;
-    top: 2.5%;
-    left: 1.875%;
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--primary);
-    border-radius: 50%;
-    mix-blend-mode: difference;
-    background-color: transparent;
-    z-index: 2;
+  position: fixed;
+  top: 2.5%;
+  left: 1.875%;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  background-color: transparent;
+  z-index: 2;
 }
 
 .profile-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
 }
-
 
 .top-bar {
-    margin-top: 0.675%;
-    margin-left: 3.75%;
-    mix-blend-mode: difference;
-    background-color: transparent;
-    position: fixed;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    z-index: 9998;
+  margin-top: 0.675%;
+  margin-left: 3.75%;
+  mix-blend-mode: difference;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  z-index: 9998;
 }
 
-.top-bar>ul {
-    margin-left: 7.5%;
-    display: inline-flex;
-    justify-content: space-between;
-    list-style-type: none;
-    gap: 30px;
+.top-bar > ul {
+  margin-left: 7.5%;
+  display: inline-flex;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 30px;
 }
 
-
-.top-bar>ul>li>a {
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--primary);
-    transition: color 200ms ease-in-out;
+.top-bar > ul > li > a {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 200ms ease-in-out;
 }
 
-.top-bar>ul>li>a::after {
-    content: "";
-    display: block;
-    width: 0%;
-    height: 2px;
-    background-color: var(--link);
-    left: 0;
-    transition: width 200ms ease-in-out;
+.top-bar > ul > li > a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--link);
+  left: 0;
+  transition: width 200ms ease-in-out;
 }
 
-.top-bar>ul>li>a:hover {
-    color: var(--link);
+.top-bar > ul > li > a:hover {
+  color: var(--link);
 }
 
-.top-bar>ul>li>a:hover::after {
-    width: 100%;
+.top-bar > ul > li > a:hover::after {
+  width: 100%;
 }
 
 .social-bar {
-    display: flex;
-    position: absolute;
-    left: 1.5%;
-    gap: 5vh;
-    width: 5vw;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  position: absolute;
+  left: 1.5%;
+  gap: 5vh;
+  width: 5vw;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.social-bar>ul {
-    height: 50%;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    list-style-type: none;
+.social-bar > ul {
+  height: 50%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style-type: none;
 }
 
-
-.social-bar>ul>li>a>i {
-    font-size: 30px;
-    color: var(--primary);
-    cursor: pointer;
-    transition: color 200ms ease-in-out;
+.social-bar > ul > li > a > i {
+  font-size: 30px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
 }
 
-.social-bar>ul>li>a>i:hover {
-    color: var(--link);
+.social-bar > ul > li > a > i:hover {
+  color: var(--link);
 }
 
-.social-bar>ul>li>div {
-    margin-left: 35%;
-    width: 2px;
-    height: 60px;
-    background-color: var(--primary);
+.social-bar > ul > li > div {
+  margin-left: 35%;
+  width: 2px;
+  height: 60px;
+  background-color: var(--primary);
 }
 
 .hero-wrapper {
-    width: 80%;
-    height: 80%;
-    display: flex;
+  width: 80%;
+  height: 80%;
+  display: flex;
 }
 
 .hero-content {
-    width: 50%;
-    padding: 20% 0% 0% 15%;
+  width: 50%;
+  padding: 20% 0% 0% 15%;
 }
 
-.hero-content>.spans>span {
-    font-size: 75px;
-    font-weight: 700;
-    color: var(--primary);
-    cursor: pointer;
-    transition: color 200ms ease-in-out;
-    margin-left: -6px;
+.hero-content > .spans > span {
+  font-size: 75px;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+  margin-left: -6px;
 }
 
-.hero-content>.spans>span:hover {
-    color: var(--link);
+.hero-content > .spans > span:hover {
+  color: var(--link);
 }
 
-.hero-content>p {
-    margin-top: 2.5%;
-    font-size: 18px;
-    font-weight: 100;
-    color: var(--primary);
-    cursor: pointer;
+.hero-content > p {
+  margin-top: 2.5%;
+  font-size: 18px;
+  font-weight: 100;
+  color: var(--primary);
+  cursor: pointer;
 }
 
 .hero-img {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 55vw;
-    height: 100vh;
-    z-index: 1;
-    background-color: var(--primary);
-    clip-path: polygon(0% 55%, 45% 0%, 100% 0%, 100% 100%, 45% 100%);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: var(--primary);
+  clip-path: polygon(0% 55%, 45% 0%, 100% 0%, 100% 100%, 45% 100%);
 }
 
 .img-clip {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 55vw;
-    height: 100vh;
-    z-index: 2;
-    background-color: var(--background);
-    clip-path: polygon(7.5% 55%, 52.5% 0%, 55% 0%, 10% 55%, 55% 100%, 52.5% 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: var(--background);
+  clip-path: polygon(7.5% 55%, 52.5% 0%, 55% 0%, 10% 55%, 55% 100%, 52.5% 100%);
 }
 
 .hero-img > img {
-    width: 100%;
-    height: 100%;
-    object-position: center;
-    object-fit: cover;
-    position: relative; 
-    z-index: 1; 
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
 
-.hero-img>.dark-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    background: linear-gradient(180deg, transparent 0%, var(--background) 100%);
-    z-index: 3; 
-    pointer-events: none; 
+.hero-img > .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, var(--background) 100%);
+  z-index: 3;
+  pointer-events: none;
 }
 
-#skills, #portfolio {
-    position: relative;
-    background-color: var(--primary);
+#skills,
+#portfolio {
+  position: relative;
+  background-color: var(--primary);
 }
 
 .skills-content {
-    width: 80%;
-    height: 60%;
-    padding: 30vh 10% 10vh 10%;
-    z-index: 1;
-    position: relative;
+  width: 80%;
+  height: 60%;
+  padding: 30vh 10% 10vh 10%;
+  z-index: 1;
+  position: relative;
 }
 
-.skills-content>ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    list-style:none;
-    width: 100%;
-    height: 100%;
-    align-items: top;
+.skills-content > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  align-items: top;
 }
 
-.skills-content>ul>li {
-    display: flex;
-    width: 70%;
-    height: fit-content;
-    justify-self: center;
-    text-align: center;
-    align-items: center;
-    padding-top: 10%;
-    gap: 5%;
+.skills-content > ul > li {
+  display: flex;
+  width: 70%;
+  height: fit-content;
+  justify-self: center;
+  text-align: center;
+  align-items: center;
+  padding-top: 10%;
+  gap: 5%;
 }
 
-.skills-content>ul>li>.icon-container {
-    width: 100px;
-    height: 100px;
-    border-radius: 2px;
-    background-color: var(--background);
-    color: var(--primary);
-    font-size: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 200ms ease-in-out;
-    transition: box-shadow 300ms ease-in;
+.skills-content > ul > li > .icon-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
+  background-color: var(--background);
+  color: var(--primary);
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+  transition: box-shadow 300ms ease-in;
 }
 
-.skills-content>ul>li:nth-child(5)>.icon-container {
-    font-size: 70px;
+.skills-content > ul > li:nth-child(5) > .icon-container {
+  font-size: 70px;
 }
 
-.skills-content>ul>li:nth-child(6)>.icon-container {
-    font-size: 55px;
+.skills-content > ul > li:nth-child(6) > .icon-container {
+  font-size: 55px;
 }
 
-.skills-content>ul>li>.icon-container:hover {
-    background-color: var(--green);
-    box-shadow: 1px 1px 10px 1px var(--green);
+.skills-content > ul > li > .icon-container:hover {
+  background-color: var(--green);
+  box-shadow: 1px 1px 10px 1px var(--green);
 }
 
-.skills-content>ul>li>p {
-    font-weight: 600;
-    height: 100%;
-    text-align: left;
+.skills-content > ul > li > p {
+  font-weight: 600;
+  height: 100%;
+  text-align: left;
 }
 
 .circle-background-1 {
-    position: absolute;
-    top: 7.5%;
-    right: 7.5%;
-    width: 100px;
-    height: 500px;
-    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
-    background-size: 16px 16px;
-    z-index: 0;
+  position: absolute;
+  top: 7.5%;
+  right: 7.5%;
+  width: 100px;
+  height: 500px;
+  background-image: radial-gradient(
+    circle,
+    var(--green) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 16px 16px;
+  z-index: 0;
 }
 
 .circle-background-2 {
-    position: absolute;
-    top: 10%;
-    left: 40%;
-    width: 125px;
-    height: 75px;
-    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
-    background-size: 16px 16px;
-    z-index: 0;
-    opacity: 0.5;
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  width: 125px;
+  height: 75px;
+  background-image: radial-gradient(
+    circle,
+    var(--green) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 16px 16px;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 .circle-background-3 {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    width: 100px;
-    height: 100px;
-    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
-    background-size: 16px 16px;
-    z-index: 0;
-    opacity: 0.5;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(
+    circle,
+    var(--green) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 16px 16px;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 #links {
-    height: 40vh;
-    width: 100%;
-    background-color: var(--primary);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: block;
-    position: relative;
+  height: 40vh;
+  width: 100%;
+  background-color: var(--primary);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: block;
+  position: relative;
 }
 
-#links>h1 {
-    padding-top: 25px;
-    color: var(--background);
-    font-size: 50px;
+#links > h1 {
+  padding-top: 25px;
+  color: var(--background);
+  font-size: 50px;
 }
 
 .link-list {
-    padding-top: 25px;
-    width: 100%;
-    display: inline-flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    font-size: 50px;
+  padding-top: 25px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  font-size: 50px;
 }
 
-.link-list>li>p {
-    font-size: 20px;
-    padding-top: 5px;
+.link-list > li > p {
+  font-size: 20px;
+  padding-top: 5px;
 }
 
-.link-list>li>div {
-    background-color: var(--background);
-    width: 125px;
-    height: 125px;
-    clip-path: polygon(0% 50%, 50% 100%, 100% 50%, 50% 0%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    position: relative;
+.link-list > li > div {
+  background-color: var(--background);
+  width: 125px;
+  height: 125px;
+  clip-path: polygon(0% 50%, 50% 100%, 100% 50%, 50% 0%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
 }
 
-.link-list>li>div>a>i {
-    color: var(--primary);
-    transition: color 200ms ease-in-out;
+.link-list > li > div > a > i {
+  color: var(--primary);
+  transition: color 200ms ease-in-out;
 }
 
-.link-list>li>div>a>i:hover {
-    color: var(--green);
+.link-list > li > div > a > i:hover {
+  color: var(--green);
 }
 
 .circle-background-4 {
-    position: absolute;
-    top: 0%;
-    right: 2.5%;
-    width: 150px;
-    height: 50px;
-    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
-    background-size: 16px 16px;
-    z-index: 0;
+  position: absolute;
+  top: 0%;
+  right: 2.5%;
+  width: 150px;
+  height: 50px;
+  background-image: radial-gradient(
+    circle,
+    var(--green) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 16px 16px;
+  z-index: 0;
 }
 
 .circle-background-5 {
-    position: absolute;
-    bottom: 0%;
-    left: 2.5%;
-    width: 150px;
-    height: 50px;
-    background-image: radial-gradient(circle, var(--green) 1.5px, transparent 1.5px);
-    background-size: 16px 16px;
-    z-index: 0;
+  position: absolute;
+  bottom: 0%;
+  left: 2.5%;
+  width: 150px;
+  height: 50px;
+  background-image: radial-gradient(
+    circle,
+    var(--green) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 16px 16px;
+  z-index: 0;
 }
 
-#portfolio>div {
-    display: grid;
-    width: 80%;
-    height: 70%;
-    padding: 22.5vh 10% 7.5vh 10%;
-    grid-template-rows: 1fr 0.75fr 1.25fr;
+#portfolio > div {
+  display: grid;
+  width: 80%;
+  height: 70%;
+  padding: 22.5vh 10% 7.5vh 10%;
+  grid-template-rows: 1fr 0.75fr 1.25fr;
 }
 
 .row1 {
-    display: inline-flex;
-    gap: 2.5%;
-    width: 100%;
-    height: 100%
+  display: inline-flex;
+  gap: 2.5%;
+  width: 100%;
+  height: 100%;
 }
 
 .row1-wrapper {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.row1-wrapper>a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60%;
-    gap: 2.5%;
-    background-color: var(--green);
-    color: var(--primary);
-    border-radius: 25px;
-    padding: 5%;
-    text-decoration: none;
-    transition: box-shadow 600ms ease-in-out;
-    transition: scale 600ms ease-in-out;
+.row1-wrapper > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  gap: 2.5%;
+  background-color: var(--green);
+  color: var(--primary);
+  border-radius: 25px;
+  padding: 5%;
+  text-decoration: none;
+  transition: box-shadow 600ms ease-in-out;
+  transition: scale 600ms ease-in-out;
 }
 
-.row1-wrapper>a:hover {
-    scale: 1.05;
-    box-shadow: 1px 1px 10px 1px var(--green);
+.row1-wrapper > a:hover {
+  scale: 1.05;
+  box-shadow: 1px 1px 10px 1px var(--green);
 }
 
-.row1-wrapper>a>i {
-    font-size: 24px;
+.row1-wrapper > a > i {
+  font-size: 24px;
 }
 
-.row1-wrapper>a>p {
-    padding-top: 2%;
+.row1-wrapper > a > p {
+  padding-top: 2%;
 }
-
 
 #contributions-heatmap {
-    width: 75%;
-    height: fit-content;
+  width: 75%;
+  height: fit-content;
 }
 
-#portfolio>h2 {
-    color: var(--background);
-    font-size: 45px;
-    opacity: 0.2;
-    position: absolute;
-    top: 16%;
-    right: 21%;
-    z-index: 0;
+#portfolio > h2 {
+  color: var(--background);
+  font-size: 45px;
+  opacity: 0.2;
+  position: absolute;
+  top: 16%;
+  right: 21%;
+  z-index: 0;
+}
+
+#repo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  padding: 20px;
+  margin: 200px 0;
+}
+
+.repo-card {
+  box-sizing: border-box;
+  border: 1px solid #85919e60;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  transition: all 120ms ease-in;
+  box-shadow: #4c5f7290 0 4px 16px -8px;
+}
+
+.repo-card:hover {
+  box-shadow: #4c5f7290 0 8px 16px -8px;
+  border: 1px solid #85919e;
+  transform: translateY(-3px);
+}
+
+.repo-card h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4c5f72;
+  letter-spacing: -0.4px;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.repo-card .description {
+  color: #676a6c;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 18px;
+}
+
+.repo-card .card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 12px;
+}
+
+.repo-card h3 span {
+  font-weight: 400;
+  color: #85919e;
+  letter-spacing: -0.2px;
+}
+
+.repo-card p {
+  color: #676a6c;
+}
+
+.repo-card .language {
+  display: flex;
+  align-items: center;
+  color: #676a6c;
+  margin-right: 8px;
+}
+
+.repo-card .language span {
+  margin-left: 5px;
+}
+
+.repo-card p i {
+  color: #676a6c;
 }
