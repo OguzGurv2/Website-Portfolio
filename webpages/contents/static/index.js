@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const rootStyles = getComputedStyle(document.documentElement);
   const linkColor = rootStyles.getPropertyValue("--link").trim();
   const primaryColor = rootStyles.getPropertyValue("--primary").trim();
-  console.log(screen.width);
+
   photoWrapper.addEventListener("mouseover", () => {
     photoBorder.style.borderColor = `${linkColor}`;
   });
@@ -182,8 +182,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         subDomain: {
           type: "ghDay",
           radius: 2,
-          width: 11,
-          height: 11,
+          width: 14,
+          height: 14,
           gutter: 1,
         },
         itemSelector: "#contributions-heatmap",

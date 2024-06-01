@@ -430,11 +430,12 @@ section > h1 {
   height: 70%;
   padding: 22.5vh 10% 7.5vh 10%;
   grid-template-rows: 1fr 0.75fr 1.25fr;
+  gap: 12.5%;
 }
 
 .row1 {
   display: inline-flex;
-  gap: 2.5%;
+  gap: 1.5%;
   width: 100%;
   height: 100%;
 }
@@ -480,23 +481,19 @@ section > h1 {
   height: fit-content;
 }
 
-#portfolio > h2 {
+#contributions {
   color: var(--background);
   font-size: 45px;
   opacity: 0.2;
   position: absolute;
   top: 16%;
-  right: 21%;
+  right: 10%;
   z-index: 0;
 }
 
 #repo-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 28px;
-  padding: 20px;
-  margin: 200px 0;
+  display: inline-flex;
+  gap: 31px;
 }
 
 .repo-card {
@@ -504,7 +501,7 @@ section > h1 {
   border: 1px solid #85919e60;
   border-radius: 12px;
   padding: 20px;
-  width: 300px;
+  width: 245px;
   transition: all 120ms ease-in;
   box-shadow: #4c5f7290 0 4px 16px -8px;
 }
@@ -512,12 +509,12 @@ section > h1 {
 .repo-card:hover {
   box-shadow: #4c5f7290 0 8px 16px -8px;
   border: 1px solid #85919e;
-  transform: translateY(-3px);
+  transform: translateY(-1px);
 }
 
 .repo-card h3 {
   margin-top: 0;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
   color: #4c5f72;
   letter-spacing: -0.4px;
@@ -533,6 +530,7 @@ section > h1 {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 18px;
+  font-size: 11px;
 }
 
 .repo-card .card-bottom {
@@ -540,6 +538,7 @@ section > h1 {
   align-items: center;
   justify-content: start;
   gap: 12px;
+  font-size: 11px;
 }
 
 .repo-card h3 span {
@@ -565,4 +564,14 @@ section > h1 {
 
 .repo-card p i {
   color: #676a6c;
+}
+
+#pinned {
+    color: var(--background);
+    font-size: 45px;
+    opacity: 0.2;
+    position: absolute;
+    top: 44.5%;
+    right: 10%;
+    z-index: 0;
 }
