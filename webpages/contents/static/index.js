@@ -80,30 +80,88 @@ class GitHubAPI {
     );
   }
 
-  async fetchRepoDetails() {
-    const query = `
-    {
-      user(login: "${this.username}") {
-        repositories(first: 10, ownerAffiliations: [OWNER], orderBy: {field: CREATED_AT, direction: DESC}) {
-          nodes {
-            name
-            languages(first: 10) {
-              edges {
-                node {
-                  name
-                  color
-                }
-                size
-              }
-            }
+  async fetchUserRepositories() {
+    const url = `https://api.github.com/users/${this.username}/repos`;
+    
+    const headers = {
+      'Authorization': `token ${this.token}`,
+    };
+
+    try {
+      const response = await axios.get(url, { headers });
+      const repos = response.data.map(repo => repo.full_name);
+      return repos;
+    } catch (error) {
+      console.error(`Error fetching repositories for ${this.username}: ${error.message}`);
+      return [];
+    }
+  }
+
+  async fetchCodeFiles(owner, repo, branch = 'main') {
+    const rootUrl = `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
+
+    const headers = {
+      'Authorization': `token ${this.token}`,
+    };
+
+    try {
+      const response = await axios.get(rootUrl, { headers });
+      const files = response.data.tree
+        .filter(item => item.type === 'blob' && /\.(js|css|html)$/.test(item.path))
+        .map(item => ({ path: item.path, extension: item.path.split('.').pop().toLowerCase() }));
+
+      const fileRequests = files.map(async file => {
+        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${file.path}`;
+        const response = await axios.get(url, { headers });
+        const content = atob(response.data.content);
+        file.loc = content.split('\n').length; 
+        return file;
+      });
+
+      return await Promise.all(fileRequests);
+    } catch (error) {
+      console.error(`Error fetching code files for ${owner}/${repo}/${branch}: ${error.message}`);
+      return [];
+    }
+  }
+
+  async calculateLinesOfCodeForUser(username) {
+    const repositories = await this.fetchUserRepositories(username);
+    const languageInfo = [];
+  
+    const extensionMappings = {
+      js: { language: 'JavaScript', color: '#f1e05a' },
+      mjs: { language: 'JavaScript', color: '#f1e05a' },
+      css: { language: 'CSS', color: '#563d7c' },
+      html: { language: 'HTML', color: '#e34c26' },
+    };
+  
+    await Promise.all(repositories.map(async repoFullName => {
+      const [owner, repo] = repoFullName.split('/');
+      const files = await this.fetchCodeFiles(owner, repo);
+  
+      files.forEach(file => {
+        const { extension, loc } = file;
+        const mappedLanguage = extensionMappings[extension.toLowerCase()]; 
+  
+        if (mappedLanguage) {
+          const existingLanguage = languageInfo.find(lang => lang.language === mappedLanguage.language);
+  
+          if (!existingLanguage) {
+            languageInfo.push({
+              language: mappedLanguage.language,
+              color: mappedLanguage.color || '#000000', 
+              LOC: loc
+            });
+          } else {
+            existingLanguage.LOC += loc;
           }
         }
-      }
-    }`;
-
-    return this._fetchFromGitHub(query).then(
-      (data) => data.user.repositories.nodes
-    );
+      });
+    }));
+  
+    console.log(languageInfo);
+    return languageInfo;
   }
 
   async _fetchFromGitHub(query) {
@@ -293,45 +351,18 @@ class LanguageDisplay {
     this.container = document.getElementById(containerId);
   }
 
-  async render(repoDetails) {
+  async render(languages) {
     this.container.innerHTML = "";
-    try {
-      const languageMap = new Map();
 
-      for (const repo of repoDetails) {
-        const languages = repo.languages.edges;
-        for (const { node, size } of languages) {
-          const languageName = node.name;
-          const languageColor = node.color;
-          const loc = await this.calculateLOC(size);
-
-          if (languageMap.has(languageName)) {
-            const languageData = languageMap.get(languageName);
-            languageData.LOC += loc;
-            languageMap.set(languageName, languageData);
-          } else {
-            languageMap.set(languageName, { LOC: loc, color: languageColor });
-          }
-        }
-      }
-      languageMap.forEach((languageName, properties) => {
-        const div = document.createElement("div");
-        div.className = "language-div";
-        div.appendChild(this._createLanguage(languageName.color, properties));
-        div.appendChild(this._createLOC(languageName.LOC));
-        this.container.appendChild(div);
-        
-      });
-      const languagePieChart = new LanguagePieChart("language-diagram");
-      languagePieChart.render(languageMap);
-    } catch (error) {
-      console.error("Error rendering languages:", error);
-    }
-  }
-
-  async calculateLOC(size) {
-    const bytesPerLine = 50;
-    return Math.round(size / bytesPerLine);
+    languages.forEach( language => {
+      const div = document.createElement("div");
+      div.className = "language-div";
+      div.appendChild(this._createLanguage(language.color, language.language));
+      div.appendChild(this._createLOC(language.LOC));
+      this.container.appendChild(div);
+    });
+    const languagePieChart = new LanguagePieChart("language-diagram");
+    languagePieChart.render(languages);
   }
 
   _createLanguage(languageColor, languageName) {
@@ -369,11 +400,10 @@ class LanguagePieChart {
       }]
     }
 
-    languages.forEach((value, key) => {
-      languageData.labels.push(key);
-      languageData.datasets[0].data.push(value.LOC); 
-      console.log(languageData.datasets[0].data)  
-      languageData.datasets[0].backgroundColor.push(value.color);
+    languages.forEach((language) => {
+      languageData.labels.push(language.language);
+      languageData.datasets[0].data.push(language.LOC); 
+      languageData.datasets[0].backgroundColor.push(language.color);
     });
 
     const ctx = document.getElementById('myChart');
@@ -433,7 +463,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const languageDisplay = new LanguageDisplay("language-container");
   try {
-    const languages = await githubAPI.fetchRepoDetails();
+    const languages = await githubAPI.calculateLinesOfCodeForUser();
     languageDisplay.render(languages);
   } catch (error) {
     console.error("Failed to fetch languages:", error);

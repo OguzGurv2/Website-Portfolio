@@ -445,11 +445,11 @@ section > h1 {
 }
 
 #pinned {
-  top: 31.3%;
+  top: 31%;
 }
 
 #language {
-  top: 52.8%;
+  top: 52.5%;
 }
 
 #portfolio > div {
@@ -667,10 +667,12 @@ section > h1 {
 #myChart {
   width: 100% !important;
   height: 100% !important;
+  z-index: 1;
 }
 
 #language-diagram .profile-img {
   position: absolute;
+  z-index: 0;
   width: 97px;
   height: 97px;
 }
