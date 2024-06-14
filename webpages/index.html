@@ -13,6 +13,7 @@
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/cal-heatmap/dist/plugins/Tooltip.min.js"></script>
   <script src="https://unpkg.com/cal-heatmap/dist/plugins/CalendarLabel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script
     src="https://kit.fontawesome.com/13e3511e22.js"
     crossorigin="anonymous"
@@ -185,6 +186,8 @@
     <h1>Portfolio</h1>
     <h2 id="contributions">Contributions</h2>
     <h2 id="pinned">Pinned</h2>
+    <h2 id="language">Language</h2>
+
     <div class="portfolio-content">
       <div class="row1">
         <div class="row1-wrapper">
@@ -197,7 +200,19 @@
         <div id="contributions-heatmap"></div>
       </div>
       <div id="repo-container" class="row2"></div>
-      <div class="row3"></div>
+      <div class="row3">
+        <div class="row3-wrapper">
+          <div id="language-container"></div>
+          <div id="language-diagram">
+            <canvas id="myChart"></canvas>
+            <img
+              alt="profile picture"
+              src="./contents/imgs/topbar-photo.jpeg"
+              class="profile-img"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
