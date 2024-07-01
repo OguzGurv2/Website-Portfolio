@@ -159,8 +159,6 @@ class GitHubAPI {
         }
       });
     }));
-  
-    console.log(languageInfo);
     return languageInfo;
   }
 
@@ -470,4 +468,27 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
 });
+
+const inputs = document.querySelectorAll("input");
+const labels = document.querySelectorAll("label");
+
+inputs.forEach(input => {
+  input.addEventListener("input", () => {
+    let label;
+    for (let i = 0; i < labels.length; i++) {
+      if (labels[i].htmlFor === input.id) {
+        label = labels[i];
+      }
+    }
+    if (input.value.length > 0) {
+      label.classList.remove('labelAnimDown');
+      label.style.display = "flex";
+      label.classList.add('labelAnimUp');
+    } else {
+      label.classList.remove('labelAnimUp');
+      label.classList.add('labelAnimDown');
+    }
+  });
+});
+
 //#endregion

@@ -426,6 +426,7 @@ section > h1 {
 
 #portfolio {
   height: 135vh;
+  background: linear-gradient(to bottom, var(--primary) 130vh, rgba(30, 30, 30, 0.9));
 }
 
 #portfolio > h1 {
@@ -675,4 +676,145 @@ section > h1 {
   z-index: 0;
   width: 97px;
   height: 97px;
+}
+
+#contact {
+  position: relative;
+}
+
+#contact h1 {
+  color: var(--primary);
+  left: 40%;
+}
+
+.contact-content {
+  padding: 25vh 10%;
+  width: 80%;
+  height: 50vh;
+  display: flex;
+  font-family: sans-serif;
+  
+}
+
+.contact-content > form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: var(--primary);
+  gap: 15%;
+}
+
+.contact-content > form > .form-row {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#contact-form > div > label, .form-row > div > label {
+  display: none;
+  color: var(--secondary);
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 3px;
+  font-size: 15px;
+  padding-left: 2px;
+}
+
+.input-wrapper > input {
+  background: transparent;
+  border-bottom: var(--secondary) 2px solid;
+  padding-left: 5px;
+  padding-bottom: 2px;
+  color: var(--primary);
+}
+
+.input-wrapper > input::placeholder {
+  color: var(--secondary);
+  font-size: 15px;
+}
+
+.input-wrapper > input:focus {
+  outline: none;
+}
+
+.second-row {
+  width: 50%;
+}
+
+#question {
+  width: 100%;
+}
+
+.labelAnimUp {
+  animation: moveTop 500ms forwards;
+}
+
+@keyframes moveTop {
+  0% {
+    margin-top: 20px;
+  }
+
+  100% {
+    margin-top: 0px;
+  }
+}
+
+.labelAnimDown {
+  animation: moveDown 250ms forwards;
+}
+
+@keyframes moveDown {
+  0% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: 20px;
+    display: none;
+  }
+}
+
+#contact > img {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 90%;
+}
+
+form > button {
+  background-color: var(--primary);
+  color: var(--green);
+  padding: 1.25% 2.5%;
+  border: 0;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  animation: 500ms ease-in-out;
+}
+
+form > button:hover {
+  color: var(--primary);
+  background-color: var(--green);
+}
+
+#footer {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 10%;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer > p {
+  font-size: 10px;
+  color: var(--primary);
+  width: fit-content;
 }

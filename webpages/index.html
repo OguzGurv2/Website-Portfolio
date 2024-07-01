@@ -161,7 +161,7 @@
     <h1>Portfolio</h1>
     <h2 id="contributions">Contributions</h2>
     <h2 id="pinned">Pinned</h2>
-    <h2 id="language">Language</h2>
+    <h2 id="language">Languages</h2>
 
     <div class="portfolio-content">
       <div class="row1">
@@ -186,6 +186,39 @@
       </div>
     </div>
   </section>
-
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <div class="contact-content">
+      <form id="contact-form" action="send_email.php" method="POST">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <br>
+            <div class="input-wrapper">
+              <input type="text" name="name" id="name" placeholder="Name" required>
+            </div>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <br>
+            <div class="input-wrapper">
+              <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+          </div>
+        </div>
+        <div class="second-row">
+          <label for="question">Question</label>
+          <br>
+          <div class="input-wrapper">
+            <input type="text" name="question" id="question" placeholder="Question" required>
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="footer">
+      <p>All rights reserved Oguz Gur (c) 2024</p>
+    </div>
+  </section>
   <script src="./contents/static/index.js"></script>
 </body>
