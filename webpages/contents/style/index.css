@@ -178,7 +178,7 @@ section > h1 {
 
 .hero-content > p {
   margin-top: 2.5%;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 100;
   color: var(--primary);
   cursor: pointer;
@@ -425,8 +425,8 @@ section > h1 {
 }
 
 #portfolio {
-  height: 135vh;
-  background: linear-gradient(to bottom, var(--primary) 130vh, rgba(30, 30, 30, 0.9));
+  height: 150vh;
+  background: linear-gradient(to bottom, var(--primary) 145vh, rgba(30, 30, 30, 0.9));
 }
 
 #portfolio > h1 {
@@ -442,15 +442,15 @@ section > h1 {
 }
 
 #contributions {
-  top: 11.9%;
+  top: 10.2%;
 }
 
 #pinned {
-  top: 31%;
+  top: 29.5%;
 }
 
 #language {
-  top: 52.5%;
+  top: 51%;
 }
 
 #portfolio > div {
@@ -489,11 +489,9 @@ section > h1 {
   padding: 5%;
   text-decoration: none;
   transition: box-shadow 600ms ease-in-out;
-  transition: scale 600ms ease-in-out;
 }
 
 .row1-wrapper > a:hover {
-  scale: 1.05;
   box-shadow: 1px 1px 10px 1px var(--green);
 }
 
