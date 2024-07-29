@@ -18,6 +18,12 @@ body {
   scroll-behavior: smooth;
 }
 
+@supports (scrollbar-color: auto) {
+  html {
+    scrollbar-color: var(--secondary) var(--background);
+  }
+}
+
 section {
   background-color: var(--background);
   width: 100%;
@@ -685,7 +691,9 @@ section > h1 {
 
 #contact h1 {
   color: var(--primary);
-  left: 40%;
+  width: 100%;
+  left: 0%;
+  text-align: center;
 }
 
 .contact-content {
@@ -746,7 +754,7 @@ section > h1 {
 }
 
 #question {
-  width: 100%;
+  width: 98.75%;
 }
 
 .labelAnimUp {
@@ -818,4 +826,52 @@ form > button:hover {
   font-size: 10px;
   color: var(--primary);
   width: fit-content;
+}
+
+#message {
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 10%;
+  left: 1.25%;
+  background-color: var(--green);
+  border: 0;
+  border-radius: 5px;
+  width: fit-content;
+  height: 50px;
+  padding: 2.5px 10px;
+  color: var(--primary);
+  gap: 5px;
+}
+
+#message > p {
+  font-size: 15px;
+}
+
+#message.active {
+  animation: op1 500ms forwards;
+}
+
+@keyframes op1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#message.close {
+  animation: op0 500ms forwards;
+}
+
+@keyframes op0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

@@ -140,7 +140,6 @@ class GitHubAPI {
     await Promise.all(repositories.map(async repoFullName => {
       const [owner, repo] = repoFullName.split('/');
       const files = await this.fetchCodeFiles(owner, repo);
-      console.log(files);
       
       files.forEach(file => {
         const { extension, loc } = file;
@@ -487,8 +486,32 @@ inputs.forEach(input => {
     } else {
       label.classList.remove('labelAnimUp');
       label.classList.add('labelAnimDown');
+      label.style.display = "none";
     }
   });
+});
+
+const submit = document.querySelector("#submit");
+const message = document.querySelector("#message");
+
+submit.addEventListener("click", () => {
+  inputs.forEach(input => {
+    let label;
+    for (let i = 0; i < labels.length; i++) {
+      if (labels[i].htmlFor === input.id) {
+        label = labels[i];
+      }
+    }
+    label.classList.remove('labelAnimUp');
+    label.classList.add('labelAnimDown');
+    label.style.display = "none";
+    input.value = "";
+  });
+  message.classList.add("active");
+  setInterval(() => {
+    message.classList.remove("active");
+    message.classList.add("close");
+  }, 1500);
 });
 
 //#endregion
