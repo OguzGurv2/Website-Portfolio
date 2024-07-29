@@ -107,7 +107,7 @@ class GitHubAPI {
     try {
       const response = await axios.get(rootUrl, { headers });
       const files = response.data.tree
-        .filter(item => item.type === 'blob' && /\.(js|css|html)$/.test(item.path))
+        .filter(item => item.type === 'blob' && /\.(mjs|js|css|html|php)$/.test(item.path))
         .map(item => ({ path: item.path, extension: item.path.split('.').pop().toLowerCase() }));
 
       const fileRequests = files.map(async file => {
@@ -134,19 +134,19 @@ class GitHubAPI {
       mjs: { language: 'JavaScript', color: '#f1e05a' },
       css: { language: 'CSS', color: '#563d7c' },
       html: { language: 'HTML', color: '#e34c26' },
+      php: { language: 'PHP', color: '#4F5D95' },
     };
   
     await Promise.all(repositories.map(async repoFullName => {
       const [owner, repo] = repoFullName.split('/');
       const files = await this.fetchCodeFiles(owner, repo);
-  
+      console.log(files);
+      
       files.forEach(file => {
         const { extension, loc } = file;
         const mappedLanguage = extensionMappings[extension.toLowerCase()]; 
-  
         if (mappedLanguage) {
           const existingLanguage = languageInfo.find(lang => lang.language === mappedLanguage.language);
-  
           if (!existingLanguage) {
             languageInfo.push({
               language: mappedLanguage.language,

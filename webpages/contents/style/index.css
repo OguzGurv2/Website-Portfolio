@@ -233,6 +233,10 @@ section > h1 {
   background-color: var(--primary);
 }
 
+#skills {
+  background: linear-gradient(to top, var(--primary) 98vh, rgba(30, 30, 30, 0.9));
+}
+
 .skills-content {
   width: 80%;
   height: 60%;
@@ -426,7 +430,7 @@ section > h1 {
 
 #portfolio {
   height: 150vh;
-  background: linear-gradient(to bottom, var(--primary) 145vh, rgba(30, 30, 30, 0.9));
+  background: linear-gradient(to bottom, var(--primary) 147.5vh, rgba(30, 30, 30, 0.9));
 }
 
 #portfolio > h1 {
@@ -450,7 +454,7 @@ section > h1 {
 }
 
 #language {
-  top: 51%;
+  top: 51.75%;
 }
 
 #portfolio > div {
@@ -464,7 +468,7 @@ section > h1 {
 
 .row1 {
   display: inline-flex;
-  gap: 14%;
+  gap: 115px;
   width: 100%;
   height: 100%;
 }
@@ -510,7 +514,7 @@ section > h1 {
 
 #repo-container {
   display: inline-flex;
-  gap: 31px;
+  gap: 15px;
 }
 
 .repo-card {
@@ -592,11 +596,11 @@ section > h1 {
 }
 
 .row3 > div {
-  width: 90%;
+  width: 95%;
   height: fit-content;
   border: 1px solid #85919e60;
   border-radius: 12px;
-  padding: 5%;
+  padding: 2.5%;
   box-shadow: #4c5f7290 0 4px 16px -8px;
   display: flex;
 }
@@ -605,7 +609,6 @@ section > h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 80%;
-  height: 100%;
 }
 
 .language-div {
@@ -629,6 +632,7 @@ section > h1 {
   align-items: center;
   color: var(--background);
   font-weight: 700;
+  font-size: 15px;
   margin-right: 8px;
 }
 
@@ -637,9 +641,8 @@ section > h1 {
 }
 
 .language-div .loc {
-  align-self: end;
   padding-left: 2.5%;
-  padding-top: 10%;
+  font-size: 15px;
 }
 
 .language-div .loc span {
