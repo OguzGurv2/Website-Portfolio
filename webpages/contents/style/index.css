@@ -723,7 +723,7 @@ section > h1 {
 }
 
 #contact-form > div > label, .form-row > div > label {
-  display: none;
+  display: flex;
   color: var(--secondary);
   position: absolute;
   margin-top: 20px;
@@ -794,20 +794,25 @@ section > h1 {
   height: 90%;
 }
 
-form > button {
+form > button:disabled {
   background-color: var(--primary);
   color: var(--green);
+  cursor: not-allowed;
+}
+
+form > button {
+  color: var(--primary);
+  background-color: var(--green);
   padding: 1.25% 2.5%;
   border: 0;
   border-radius: 5px;
   font-size: 15px;
   cursor: pointer;
-  animation: 500ms ease-in-out;
+  transition: box-shadow 250ms ease-in-out;
 }
 
 form > button:hover {
-  color: var(--primary);
-  background-color: var(--green);
+  box-shadow: 1px 0px 5px 1px var(--green);
 }
 
 #footer {

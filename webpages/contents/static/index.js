@@ -470,28 +470,92 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const inputs = document.querySelectorAll("input");
 const labels = document.querySelectorAll("label");
+const submit = document.querySelector("#submit");
+
+class Input {
+  constructor(node) {
+    this.node = node;
+    this.label = this.findLabel();
+    this.checked = false;
+    this.labelAnim();
+    this.checkValue();
+  }
+  findLabel() {
+    for (let i = 0; i < labels.length; i++) {
+      if (labels[i].htmlFor === this.node.id) {
+        return labels[i];
+      };
+    };
+  }
+  labelAnim() {
+    this.node.addEventListener("input", () => {
+      if (this.node.value.length > 0) {
+        this.label.classList.remove('labelAnimDown');
+        this.label.classList.add('labelAnimUp');
+      } else {
+        this.label.classList.remove('labelAnimUp');
+        this.label.classList.add('labelAnimDown');
+      };
+    });
+  }
+  checkValue() {
+    if (this.node.id == "name") {
+      this.node.addEventListener("input", () => {
+        if (this.node.value.length >= 3) {
+          this.checked = true;
+        } else {
+          this.checked = false;
+        }
+      });
+    } else if (this.node.id == "email") {
+      this.node.addEventListener("input", () => {
+        if (this.node.value.includes("@")) {
+          this.checked = true;
+        } else {
+          this.checked = false;
+        }
+      });
+    } else {
+      this.node.addEventListener("input", () => {
+        if (this.node.value.length >= 0) {
+          this.checked = true;
+        } else {
+          this.checked = false;
+        }
+      });
+    }
+  }
+}
+
+let inputInstances = [];
 
 inputs.forEach(input => {
-  input.addEventListener("input", () => {
-    let label;
-    for (let i = 0; i < labels.length; i++) {
-      if (labels[i].htmlFor === input.id) {
-        label = labels[i];
-      }
-    }
-    if (input.value.length > 0) {
-      label.classList.remove('labelAnimDown');
-      label.style.display = "flex";
-      label.classList.add('labelAnimUp');
-    } else {
-      label.classList.remove('labelAnimUp');
-      label.classList.add('labelAnimDown');
-      label.style.display = "none";
-    }
-  });
+  const instance = new Input(input);
+  inputInstances.push(instance);
 });
 
-const submit = document.querySelector("#submit");
+class ContactForm {
+  constructor() {
+    this.node = document.getElementById("contact-form");
+    inputs.forEach(input => {
+      input.addEventListener("input", () => {
+        this.checkInputs();
+      });
+    });
+  }
+  checkInputs() {
+    for (let i = 0; i < inputs.length; i++) {
+      if (!inputInstances[i].checked) {
+        submit.disabled = true;
+        return;
+      }
+    }
+    submit.disabled = false;
+  }
+}
+
+new ContactForm();
+
 const message = document.querySelector("#message");
 
 submit.addEventListener("click", () => {
@@ -508,6 +572,7 @@ submit.addEventListener("click", () => {
     input.value = "";
   });
   message.classList.add("active");
+  submit.disabled = true;
   setInterval(() => {
     message.classList.remove("active");
     message.classList.add("close");
