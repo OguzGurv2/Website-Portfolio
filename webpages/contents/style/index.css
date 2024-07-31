@@ -158,15 +158,14 @@ section > h1 {
   background-color: var(--primary);
 }
 
-.hero-wrapper {
-  width: 80%;
-  height: 80%;
+.hero-section {
   display: flex;
 }
 
 .hero-content {
-  width: 50%;
-  padding: 20% 0% 0% 15%;
+  width: 30%;
+  padding: 0% 0% 0% 15%;
+  align-self: center;
 }
 
 .hero-content > .spans > span {
@@ -198,7 +197,6 @@ section > h1 {
   width: 55vw;
   height: 100vh;
   z-index: 1;
-  background-color: var(--primary);
   clip-path: polygon(0% 55%, 45% 0%, 100% 0%, 100% 100%, 45% 100%);
 }
 
@@ -460,7 +458,7 @@ section > h1 {
 }
 
 #language {
-  top: 51.75%;
+  top: 52.5%;
 }
 
 #portfolio > div {
@@ -474,7 +472,7 @@ section > h1 {
 
 .row1 {
   display: inline-flex;
-  gap: 115px;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
 }
@@ -514,13 +512,13 @@ section > h1 {
 }
 
 #contributions-heatmap {
-  width: 60%;
   height: fit-content;
 }
 
 #repo-container {
   display: inline-flex;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 1%;
 }
 
 .repo-card {
@@ -530,7 +528,8 @@ section > h1 {
   border: 1px solid #85919e60;
   border-radius: 12px;
   padding: 20px;
-  width: 245px;
+  max-width: 245px;
+  min-width: 200px;
   transition: all 120ms ease-in;
   box-shadow: #4c5f7290 0 4px 16px -8px;
   text-decoration: none;
@@ -552,19 +551,24 @@ section > h1 {
   letter-spacing: -0.4px;
   margin-bottom: 18px;
   line-height: 1;
-  height: fit-content;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  max-height: 1.25em;
 }
 
 .repo-card .description {
   color: #676a6c;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  height: calc(2 * 1.24em);
   margin-bottom: 18px;
   font-size: 11px;
-  height: 100%;
 }
 
 .repo-card .card-bottom {
@@ -580,10 +584,6 @@ section > h1 {
   font-weight: 400;
   color: #85919e;
   letter-spacing: -0.2px;
-}
-
-.repo-card p {
-  color: #676a6c;
 }
 
 .repo-card .language {
@@ -811,7 +811,7 @@ form > button {
   transition: box-shadow 250ms ease-in-out;
 }
 
-form > button:hover {
+form > button:not(:disabled):hover {
   box-shadow: 1px 0px 5px 1px var(--green);
 }
 
@@ -878,5 +878,137 @@ form > button:hover {
   }
   100% {
     opacity: 0;
+  }
+}
+
+.top-bar-background {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .top-bar {
+    height: 12.5vh;
+  }
+
+  .top-bar ul {
+    margin: 0% 7.5% 0% 15%;
+    gap: 0;
+    width: 100%;
+  }
+
+  .top-bar > ul > li > a {
+    font-size: 20px;
+  }
+
+  .img-wrapper {
+    width: 106px;
+    height: 106px;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .img-border {
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+  }
+
+  .img-clip {
+    z-index: -1;
+  }
+
+  .hero-img {
+    clip-path: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
+
+  .social-bar {
+    z-index: 1;
+  }
+
+  .social-bar ul {
+    background-color: var(--background);
+    padding: 0% 50%;
+    border-radius: 0px 15px 15px 0px;
+  }
+
+  .top-bar-background {
+    display: flex;
+    background-color: rgba(30, 30, 30, 0.9);
+    height: 12.5vh;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    border-radius: 0% 0% 25px 25px;
+  }
+
+  .hero-content {
+    width: 100%;
+    align-self: center;
+    z-index: 1;
+    padding: 0;
+    display: grid;
+  }
+
+  .hero-content .spans {
+    justify-self: center;
+    display: flex;
+  }
+
+  .hero-content .spans span {
+    font-size: 100px;
+  }
+
+  .hero-content .spans span:nth-child(4) {
+    padding-right: 10%;
+  }
+
+  .hero-content p {
+    justify-self: center;
+    font-size: 25px;
+  }
+
+  #portfolio {
+    height: 75vh;
+  }
+
+  #portfolio > div {
+    padding: 13.5vh 10% 7.5vh 10%;
+    gap: 7.5%;
+  }
+
+  .row1 {
+    height: 50%;
+    gap: 5%;
+  }
+
+  .row1-wrapper {
+    width: 50%;
+  }
+
+  .row1-wrapper > a {
+    width: 95%;
+    margin-top: 20px;
+  }
+
+  .portfolio-content > div {
+    height: auto;
+  }
+
+  #contributions {
+    top: 14%;
+  }
+
+  #pinned {
+    top: 34%;
+  }
+
+  #language {
+    top: 58.5%
   }
 }
