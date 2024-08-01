@@ -881,10 +881,6 @@ form > button:not(:disabled):hover {
   }
 }
 
-.top-bar-background {
-  display: none;
-}
-
 @media screen and (max-width: 1024px) {
   .top-bar {
     height: 12.5vh;
@@ -996,8 +992,25 @@ form > button:not(:disabled):hover {
     margin-top: 20px;
   }
 
-  .portfolio-content > div {
-    height: auto;
+  #repo-container {
+    display: grid;
+    gap: 0%;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #repo-container h3 {
+    height: 1.1em;
+    font-size: 20px;
+  }
+
+  .repo-card .description, .repo-card .card-bottom {
+    font-size: 15px;
+  }
+
+  .repo-card {
+    height: fit-content;
   }
 
   #contributions {
@@ -1005,10 +1018,158 @@ form > button:not(:disabled):hover {
   }
 
   #pinned {
-    top: 34%;
+    top: 33.5%;
   }
 
   #language {
-    top: 58.5%
+    top: 68%
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  .img-border {
+    width: 50px;
+    height: 50px;
+    top: 1.25%;
+  }
+
+  .img-wrapper {
+    width: 53px;
+    height: 53px;
+    top: 1.25%;
+  }
+
+  .profile-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .top-bar-background {
+    height: 10vh;
+    background-color: rgba(30, 30, 30, 1);
+    width: 100%;
+  }
+
+  .top-bar {
+    height: 10vh;
+    width: 100%;
+  }
+
+  .top-bar ul {
+    display: none;
+  }
+
+  .hero-content .spans span {
+    font-size: 50px;
+  }
+
+  .hero-content p {
+    font-size: 12.5px;
+  }
+
+  .skills-content > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-content > ul > li {
+    display: block;
+  }
+
+  .skills-content > ul > li > .icon-container {
+    padding: 15%;
+  }
+
+  .skills-content > ul > li > p {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .link-list {
+    font-size: 30px;
+  }
+
+  .link-list > li > div {
+    width: 75px;
+    height: 75px;
+  }
+
+  #portfolio {
+    height: 90vh;
+  }
+
+  .row1 {
+    height: 100%;
+    display: grid;
+    gap: 15%;
+  }
+
+  .row1-wrapper {
+    justify-content: unset;
+    height: fit-content;
+    width: 100%;
+  }
+
+  .row1-wrapper a {
+    width: 50%;
+  }
+
+  #repo-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+  }
+
+  #repo-container h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .repo-card {
+    padding: 15px;
+    min-width: 150px;
+    width: 175px;
+    max-width: none;
+  }
+
+  .repo-card .description {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .repo-card .card-bottom {
+    font-size: 11px;
+  }
+
+  .language-div .language, .language-div .loc {
+    font-size: 10px;
+  }
+
+  #language-diagram .profile-img {
+    width: 95px;
+    height: 95px;
+  }
+
+  #portfolio > h2 {
+    font-size: 30px;
+  }
+
+  #contributions {
+    top: 26.5%;
+  }
+
+  #pinned {
+    top: 37.5%;
+  }
+
+  #language {
+    top: 70%;
+  }
+
+  .contact-content > form > .form-row {
+    width: 100%;
+  }
+
+  .second-row {
+    width: 100%;
   }
 }

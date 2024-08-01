@@ -195,6 +195,16 @@ class GitHubAPI {
 class ContributionsHeatmap {
   constructor(containerId) {
     this.containerId = containerId;
+    this.subDomainSize = this.getSubdomainSize();
+  }
+
+  getSubdomainSize() {
+    console.log(document.documentElement.clientWidth)
+    if (document.documentElement.clientWidth < 480) {
+      return 5.5;  
+    } else {
+      return 11; 
+    }
   }
 
   async render(data) {
@@ -227,8 +237,8 @@ class ContributionsHeatmap {
         subDomain: {
           type: "ghDay",
           radius: 2,
-          width: 11,
-          height: 11,
+          width: this.subDomainSize,
+          height: this.subDomainSize,
           gutter: 1,
         },
         itemSelector: this.containerId,
