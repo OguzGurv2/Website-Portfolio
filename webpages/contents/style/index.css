@@ -978,7 +978,7 @@ form > button:not(:disabled):hover {
   }
 
   #portfolio {
-    height: 75vh;
+    height: auto;
   }
 
   #portfolio > div {
@@ -1105,7 +1105,7 @@ form > button:not(:disabled):hover {
   }
 
   #portfolio {
-    height: 90vh;
+    height: auto;
   }
 
   .row1 {
