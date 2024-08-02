@@ -199,7 +199,6 @@ class ContributionsHeatmap {
   }
 
   getSubdomainSize() {
-    console.log(document.documentElement.clientWidth)
     if (document.documentElement.clientWidth < 480) {
       return 5.5;  
     } else {
@@ -588,5 +587,24 @@ submit.addEventListener("click", () => {
     message.classList.add("close");
   }, 1500);
 });
+
+const dropdownBtn = document.querySelector("#dropdown-menu");
+const dropdownContent = document.querySelector("#dropdown-content");
+const closeBtn = document.querySelector("#close");
+const navBtns = dropdownContent.querySelectorAll("a");
+
+dropdownBtn.addEventListener("click", () => {
+  dropdownContent.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  dropdownContent.classList.remove("active");
+});
+
+navBtns.forEach((button) => {
+  button.addEventListener("click", () => {
+    dropdownContent.classList.remove("active");
+  })
+})
 
 //#endregion
