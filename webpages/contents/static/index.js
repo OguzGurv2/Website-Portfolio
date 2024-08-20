@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const token = "";
 
   const githubAPI = new GitHubAPI(username, token);
-  const repoDisplay = new RepoDisplay("repo-container");
+  const repoDisplay = new RepoDisplay("row2-wrapper");
 
   try {
     const repos = await githubAPI.fetchPinnedRepos();

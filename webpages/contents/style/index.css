@@ -441,24 +441,28 @@ section > h1 {
   top: 9%;
 }
 
-#portfolio > h2 {
+.portfolio-content > div {
+  position: relative;
+}
+
+#contributions, #pinned, #language{
   color: var(--green);
   font-size: 45px;
   opacity: 0.2;
   position: absolute;
-  right: 11.5%;
+  right: 0%;
 }
 
 #contributions {
-  top: 10.2%;
+  top: -35%;
 }
 
 #pinned {
-  top: 29.5%;
+  top: -27.5%
 }
 
 #language {
-  top: 52.5%;
+  top: -22%;
 }
 
 #portfolio > div {
@@ -515,7 +519,7 @@ section > h1 {
   height: fit-content;
 }
 
-#repo-container {
+#row2-wrapper {
   display: inline-flex;
   justify-content: space-between;
   gap: 1%;
@@ -905,19 +909,19 @@ form > button:not(:disabled):hover {
   }
 
   .img-wrapper {
-    width: 106px;
-    height: 106px;
+    width: 81px;
+    height: 81px;
   }
 
   .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
   }
 
   .img-border {
     z-index: 3;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
   }
 
   .img-clip {
@@ -977,6 +981,11 @@ form > button:not(:disabled):hover {
     font-size: 25px;
   }
 
+  .skills-content > ul > li > .icon-container {
+    max-width: 200px;
+    min-width: 100px;
+  }
+
   #portfolio {
     height: auto;
   }
@@ -987,30 +996,48 @@ form > button:not(:disabled):hover {
   }
 
   .row1 {
-    height: 50%;
-    gap: 5%;
+    display: grid;
+    gap: 10%;
+    grid-template-columns: 1fr;
   }
 
   .row1-wrapper {
-    width: 50%;
+    gap: 0%;
+    width: 100%;
   }
 
-  .row1-wrapper > a {
-    width: 95%;
+  .row1-wrapper > p {
     margin-top: 20px;
   }
 
-  #repo-container {
+  .row1-wrapper > a {
+    width: 30%;
+    height: 10%;
+  }
+
+  #row2-wrapper {
     display: grid;
     gap: 0%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
   }
 
-  #repo-container h3 {
+  #row2-wrapper h3 {
     height: 1.1em;
     font-size: 20px;
+  }
+
+  #contributions {
+    top: 45.5%;
+  }
+
+  #pinned {
+    top: -13%;
+  }
+
+  #language {
+    top: -20%;
   }
 
   .repo-card .description, .repo-card .card-bottom {
@@ -1019,18 +1046,8 @@ form > button:not(:disabled):hover {
 
   .repo-card {
     height: fit-content;
-  }
-
-  #contributions {
-    top: 14%;
-  }
-
-  #pinned {
-    top: 33.5%;
-  }
-
-  #language {
-    top: 68%
+    justify-self: center;
+    max-width: 400px;
   }
 }
 
@@ -1125,12 +1142,12 @@ form > button:not(:disabled):hover {
     padding: 2%;
   }
 
-  #repo-container {
+  #row2-wrapper {
     grid-template-columns: 1fr 1fr;
     gap: 2%;
   }
 
-  #repo-container h3 {
+  #row2-wrapper h3 {
     font-size: 13px;
     margin-bottom: 10px;
   }
@@ -1160,20 +1177,20 @@ form > button:not(:disabled):hover {
     height: 95px;
   }
 
-  #portfolio > h2 {
+  #contributions, #pinned, #language {
     font-size: 30px;
   }
 
   #contributions {
-    top: 23.5%;
+    top: 50%;
   }
 
   #pinned {
-    top: 34.5%;
+    top: -13.5%;
   }
 
   #language {
-    top: 64%;
+    top: -19.5%;
   }
 
   .contact-content > form > .form-row {
