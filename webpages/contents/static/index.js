@@ -193,14 +193,15 @@ class GitHubAPI {
 }
 
 class ContributionsHeatmap {
-  constructor(containerId) {
+  constructor(containerId, startDate) {
     this.containerId = containerId;
     this.subDomainSize = this.getSubdomainSize();
+    this.startDate = startDate;
   }
 
   getSubdomainSize() {
     if (document.documentElement.clientWidth < 480) {
-      return 5.5;  
+      return 5;  
     } else {
       return 11; 
     }
@@ -219,7 +220,7 @@ class ContributionsHeatmap {
           x: "date",
           y: "value",
         },
-        date: { start: new Date("2024-01-01") },
+        date: { start: this.startDate },
         range: 12,
         scale: {
           color: {
@@ -255,7 +256,7 @@ class ContributionsHeatmap {
         [
           CalendarLabel,
           {
-            width: 30,
+            width: 25,
             textAlign: "start",
             text: () =>
               dayjs.weekdaysShort().map((d, i) => (i % 2 === 0 ? "" : d)),
@@ -455,10 +456,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Failed to fetch pinned repositories:", error);
   }
+  
+  const todayDate = new Date();
+  const lastYearDate = new Date(todayDate);
+  lastYearDate.setFullYear(todayDate.getFullYear() - 1);
 
-  const contributionsHeatmap = new ContributionsHeatmap("#contributions-heatmap");
-  const fromDate = "2024-01-01T00:00:00Z";
-  const toDate = "2024-12-31T23:59:59Z";
+  const fromDate = lastYearDate.toISOString().split('T')[0] + 'T00:00:00Z';
+  const toDate = todayDate.toISOString().split('T')[0] + 'T00:00:00Z';
+  lastYearDate.setMonth(lastYearDate.getMonth() + 1)
+  const startDate = lastYearDate.toISOString().split('T')[0];
+  const contributionsHeatmap = new ContributionsHeatmap("#contributions-heatmap", startDate);
 
   try {
     const contributions = await githubAPI.fetchContributions(fromDate, toDate);
@@ -499,11 +506,15 @@ class Input {
   labelAnim() {
     this.node.addEventListener("input", () => {
       if (this.node.value.length > 0) {
+        this.label.style.display = "flex";
         this.label.classList.remove('labelAnimDown');
         this.label.classList.add('labelAnimUp');
       } else {
         this.label.classList.remove('labelAnimUp');
         this.label.classList.add('labelAnimDown');
+        setTimeout(()=> {
+          this.label.style.display = "none";
+        }, 250);
       };
     });
   }
