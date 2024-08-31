@@ -907,6 +907,10 @@ form > button:not(:disabled):hover {
   display: none;
 }
 
+.stars, .forks {
+  color: var(--background);
+}
+
 @media screen and (max-width: 1024px) {
 
   .profile-img, .img-wrapper {

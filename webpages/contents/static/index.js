@@ -107,7 +107,7 @@ class GitHubAPI {
     try {
       const response = await axios.get(rootUrl, { headers });
       const files = response.data.tree
-        .filter(item => item.type === 'blob' && /\.(mjs|js|css|html|php)$/.test(item.path))
+        .filter(item => item.type === 'blob' && /\.(mjs|js|css|html|php|py)$/.test(item.path))
         .map(item => ({ path: item.path, extension: item.path.split('.').pop().toLowerCase() }));
 
       const fileRequests = files.map(async file => {
@@ -135,6 +135,7 @@ class GitHubAPI {
       css: { language: 'CSS', color: '#563d7c' },
       html: { language: 'HTML', color: '#e34c26' },
       php: { language: 'PHP', color: '#4F5D95' },
+      py: { language: 'Python', color: '#3572A5' },
     };
   
     await Promise.all(repositories.map(async repoFullName => {
